@@ -27,7 +27,9 @@ class AddFoodForm(FlaskForm):
 def home():
     thisweek = App.totals()
     form = AddFoodForm()
-    return render_template("Home.html", thisweek_CO2 = thisweek["CO2"], thisweek_water = thisweek["water"], thisweek_plastic = thisweek["plastic"], form = form)
+    return render_template("Home.html", notification_of_the_day = thisweek_dailypic["dailynotification"], thisweek_CO2 = thisweek["CO2"], thisweek_water = thisweek["water"], thisweek_plastic = thisweek["plastic"], form = form)
+#="Click_to_see-this_season's_veggies.png"
+
 
 @app.route("/Add_Food", methods=["POST", "GET"])
 def add_food():
